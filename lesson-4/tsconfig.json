@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+	"baseUrl": "./",
+	"module": "amd",
+	"paths": {
+	  "components/*": ["src/components/*"],
+	  "components": ["src/components"],
+	  "@/*": ["src/*"]
+	},
+	"jsx": "react",
+	"target": "es5",
+	"removeComments": true,
+	"sourceMap": true,
+	"outDir": "dist",
+	"outFile": "index.js",
+	"allowSyntheticDefaultImports": true
+  }
+}
