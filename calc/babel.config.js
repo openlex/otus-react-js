@@ -3,4 +3,7 @@ module.exports = {
     ["@babel/preset-env", { targets: "defaults" }],
     "@babel/preset-typescript",
   ],
+  plugins: [
+    "@babel/plugin-transform-runtime",
+  ],
 };

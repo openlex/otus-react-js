@@ -2,7 +2,8 @@ const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-	entry: './src/index.js',
+	entry: './src/index.ts',
+	devtool: 'source-map',
 	output: {
 		path: path.resolve(__dirname, 'dist'),
 		filename: 'main.js'
@@ -11,12 +12,15 @@ module.exports = {
 		rules: [
 			{ test: /\.txt$/, use: 'raw-loader' },
 			{ test: /\.html$/i, loader: 'html-loader' },
-			{ test: /\.(js|ts)x?$/, loader: 'babel-loader', exclude: /node_modules/ },
+			{ test: /\.(js|ts)x?$/, loader: require.resolve("babel-loader"), exclude: /node_modules/ },
 		]
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: "./public/index.html",
+			template: "./src/index.html",
 		}),
 	],
+	node: {
+		fs: "empty"
+	}
 };
