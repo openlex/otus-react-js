@@ -1,0 +1,12 @@
+.block {
+	min-width: 150px;
+	padding: 10px 20px;
+	font-size: 14px;
+	background-color: #199ee2;
+	color: #fff;
+
+	&:disabled {
+		background-color: #aaaaaa;
+		color: #666666;
+	}
+}

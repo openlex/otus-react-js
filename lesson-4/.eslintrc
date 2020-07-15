@@ -51,7 +51,9 @@
     "ecmaVersion": 2018,
     "ecmaFeatures": {
       "jsx": true
-    }
+    },
+    "project": "tsconfig.json",
+    "tsconfigRootDir": "."
   },
   "overrides": [
     {

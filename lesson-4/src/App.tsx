@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from 'react';
+import { Games } from '@containers';
 
 export const App: React.FC < {} > = () => {
 	return (
-		<div> TEST </div>
+		<Games/>
 	)
 }
