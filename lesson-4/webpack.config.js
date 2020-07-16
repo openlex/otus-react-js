@@ -1,10 +1,8 @@
 const path = require('path');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpackRules = require('./webpack.rules');
-// const CssoWebpackPlugin = require('csso-webpack-plugin').default;
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpackPlugins = require('./webpack.plugins');
+const aliases = require('./webpack.aliases');
 
 const configs = {
 	entry: './src/index.tsx',
@@ -16,12 +14,7 @@ const configs = {
 	},
 	resolve: {
 		extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
-		alias: {
-			'@containers': path.resolve(__dirname, 'src/containers/'),
-			'@components': path.resolve(__dirname, 'src/components/'),
-			'@types': path.resolve(__dirname, 'src/types/'),
-			'@': path.resolve(__dirname, 'src'),
-		},
+		alias: aliases,
 	},
 	module: { ...webpackRules },
 	devServer: {
@@ -30,19 +23,7 @@ const configs = {
 		hot: true,
 		historyApiFallback: true,
 	},
-	plugins: [
-		new HtmlWebpackPlugin({
-			title: 'Hot Module Replacement',
-			template: './public/index.html',
-		}),
-		new CleanWebpackPlugin(),
-		// new CssoWebpackPlugin(),
-		new ExtractTextPlugin({
-			filename:'css/[name].css',
-			publicPath: './',
-			allChunks: true,
-		})
-	],
+	plugins: [...webpackPlugins]
 }
 
 module.exports = (env, argv) => {

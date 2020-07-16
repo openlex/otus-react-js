@@ -27,7 +27,7 @@ module.exports = {
 	setupFilesAfterEnv: ["<rootDir>/jestSettings.js"],
 	moduleNameMapper: {
 		// https://jestjs.io/docs/en/webpack#handling-static-assets
-		"\\.(css|less|scss)$": "<rootDir>/jest.styleMock.js",
+		"\\.(css|less|scss)$": "<rootDir>/__mocks__/styleMock.js",
 		"^@/(.*)$": "<rootDir>/src/$1",
 		"^@containers(.*)$": "<rootDir>/src/containers",
 		"^@components(.*)$": "<rootDir>/src/components$1",
