@@ -1,6 +1,6 @@
 import React from 'react';
 import { GamesList } from '@/components/GamesList/GamesList';
-import { gamesMock as games } from './games.mock'
+import { gamesMock as games } from '@mocks'
 import { GameForm } from '@components';
 
 export class Games extends React.Component{

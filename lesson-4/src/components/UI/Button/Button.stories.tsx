@@ -13,7 +13,7 @@ addParameters({
 });
 
 export default {
-	title: 'ui/button',
+	title: 'ui/Кнопка',
 	description: 'Кнопка',
 	component: Button,
 	decorators: [withKnobs],

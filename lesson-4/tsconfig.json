@@ -15,6 +15,9 @@
 	  "@types": ["./src/types/index"],
 	  "@types/*": ["./src/types/*"],
 
+	  "@mocks/*": ["./__mocks__/*"],
+	  "@mocks": ["./__mocks__/index"],
+
 	  "@/*": ["src/*"]
 	},
 	"removeComments": true,

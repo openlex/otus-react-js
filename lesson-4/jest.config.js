@@ -25,20 +25,22 @@ module.exports = {
 	coverageDirectory: "coverage",
 	testEnvironment: "jsdom",
 	setupFilesAfterEnv: ["<rootDir>/jestSettings.js"],
+	transform: {
+		"^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
+	},
 	moduleNameMapper: {
 		// https://jestjs.io/docs/en/webpack#handling-static-assets
 		"\\.(css|less|scss)$": "<rootDir>/__mocks__/styleMock.js",
 		"^@/(.*)$": "<rootDir>/src/$1",
-		"^@containers(.*)$": "<rootDir>/src/containers",
+		"^@__mocks__(.*)$": "<rootDir>/__mocks__$1",
+		"^@containers(.*)$": "<rootDir>/src/containers$1",
 		"^@components(.*)$": "<rootDir>/src/components$1",
-		"^@types(.*)$": "<rootDir>/src/types",
-		"^@(.*)$": "<rootDir>/src",
+		"^@types(.*)$": "<rootDir>/src/types$1",
+		// "^@(.*)$": "<rootDir>/src$1",
+
 	},
 	transformIgnorePatterns: [
 		'/node_modules/'
-	],
-	transform: {
-		"^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
-	}
+	]
 };
 
