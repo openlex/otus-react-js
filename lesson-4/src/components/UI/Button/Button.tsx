@@ -6,7 +6,7 @@ interface IButtonProps {
 	className?: string;
 	title: string;
 	isDisabled?: boolean;
-	onClick(): void;
+	onClick?(): void;
 }
 
 export const Button: React.FC<IButtonProps> = (props: IButtonProps) => {

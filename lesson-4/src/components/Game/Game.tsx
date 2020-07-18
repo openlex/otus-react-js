@@ -22,11 +22,11 @@ export const Game: React.FC<IGameProps> = (props: IGameProps) =>{
 	return (
 		<Panel className={cn(s.block, className)}>
 			<div className={s.info}>
-				<div className={s.title}>{title}</div>
-				{ rating && <div className={s.rating}>{rating}</div> }
+				<div className={s.title} data-test-id="title">{title}</div>
+				{ rating && <div className={s.rating} data-test-id="rating">{rating}</div> }
 			</div>
-			{ description && <div className={s.description}>{description}</div> }
-			{ genres && <div className={s.genres}>
+			{ description && <div className={s.description} data-test-id="description">{description}</div> }
+			{ genres && <div className={s.genres} data-test-id="genres-wrapper">
 				<GenreList genres={genres}/>
 			</div> }
 		</Panel>

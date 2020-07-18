@@ -26,13 +26,13 @@ const configs = {
 	plugins: [...webpackPlugins]
 }
 
-module.exports = (env, argv) => {
+module.exports = (env, options) => {
 
-	if (argv.mode === 'development') {
+	if (options.mode === 'development') {
 		configs.devtool = 'source-map';
 	}
 
-	if (argv.mode === 'production') {
+	if (options.mode === 'production') {
 	}
 
 	return configs;
