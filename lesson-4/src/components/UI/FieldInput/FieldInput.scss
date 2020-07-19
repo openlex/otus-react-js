@@ -1,0 +1,17 @@
+.block {
+	min-width: 200px;
+	max-width: 90%;
+	padding: 2px;
+}
+
+.label {
+	display: block;
+	margin: 3px;
+	padding: 2px;
+}
+
+.textarea {
+	width: 100%;
+	min-height: 90px;
+	padding: 10px;
+}

@@ -19,7 +19,7 @@ const configs = {
 	module: { ...webpackRules },
 	devServer: {
 		contentBase: path.join(__dirname, 'dist'),
-		port: 8000,
+		port: 8008,
 		hot: true,
 		historyApiFallback: true,
 	},
