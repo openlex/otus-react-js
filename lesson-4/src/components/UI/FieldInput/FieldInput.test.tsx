@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { FieldInput, IFieldInputData, IFieldInputProps } from '@components';
 import { shallow } from "enzyme";
 

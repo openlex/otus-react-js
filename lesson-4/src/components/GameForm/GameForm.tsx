@@ -4,28 +4,16 @@ import cn from 'classnames';
 import { Button, FieldInput, Panel, IFieldInputData } from '@components';
 import { IGame } from '@types';
 
-export interface IGameFormProps {
-	onAddGame(game: {
-		title: string;
-		genres?: string[];
-		description?: string;
-		rating?: number;
-	}): void;
+export interface IGameItem {
+	title: string;
+	genres?: string[];
+	description?: string;
+	rating?: number;
 }
-//
-// export interface IGameFormState {
-// 	title?: string;
-// 	genres?: string;
-// 	rating?: string;
-// 	description?: string;
-// }
-//
-// const initialState = {
-// 	title: '',
-// 	genres: '',
-// 	rating: '',
-// 	description: '',
-// }
+
+export interface IGameFormProps {
+	onAddGame(game: IGameItem): void;
+}
 
 export interface IGameFormState {
 	title?: string;
@@ -52,7 +40,7 @@ export class GameForm extends React.Component<IGameFormProps, IGameFormState> {
 		this.resetForm = this.resetForm.bind(this);
 	}
 
-	public onChangeField(data: IFieldInputData) {
+	onChangeField(data: IFieldInputData) {
 		this.setState({
 			[data.name]: data.value,
 		});
@@ -94,13 +82,13 @@ export class GameForm extends React.Component<IGameFormProps, IGameFormState> {
 
 		return (
 			<Panel className={s.block}>
-				<FieldInput value={title} name="title" className={s.label} onChange={this.onChangeField} label="Заголовок"/>
-				<FieldInput value={rating} name="rating" className={s.label} onChange={this.onChangeField} label="Рейтинг" type="number"/>
-				<FieldInput value={description} name="description" className={s.label} onChange={this.onChangeField} label="Описание" isTextArea/>
-				<FieldInput value={genres} name="genres" className={s.label} onChange={this.onChangeField} label="Жанры, через запятую"/>
+				<FieldInput data-test-id="input-title" value={title} name="title" className={s.label} onChange={this.onChangeField} label="Заголовок"/>
+				<FieldInput data-test-id="input-rating" value={rating} name="rating" className={s.label} onChange={this.onChangeField} label="Рейтинг" type="number"/>
+				<FieldInput data-test-id="input-description" value={description} name="description" className={s.label} onChange={this.onChangeField} label="Описание" isTextArea/>
+				<FieldInput data-test-id="input-genres" value={genres} name="genres" className={s.label} onChange={this.onChangeField} label="Жанры, через запятую"/>
 				<div>
-					<Button onClick={this.addGame} title="Добавить игру"/>
-					<Button onClick={this.resetForm} title="Очистить поля"/>
+					<Button data-test-id="addButton" onClick={this.addGame} title="Добавить игру"/>
+					<Button data-test-id="resetButton" onClick={this.resetForm} title="Очистить поля"/>
 				</div>
 			</Panel>
 		);
