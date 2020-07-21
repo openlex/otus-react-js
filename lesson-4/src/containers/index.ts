@@ -1,1 +1,1 @@
-export * from './Games/index';
+export * from "./Games/index";

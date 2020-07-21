@@ -30,6 +30,11 @@
         "message": "Restricted default export, prefer named exports!"
       }
     ],
+    "@typescript-eslint/no-var-requires": 0,
+    "@typescript-eslint/interface-name-prefix": [
+      "error",
+      { "prefixWithI": "always" }
+    ],
     "no-console": [
       "error",
       {

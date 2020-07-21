@@ -1,2 +1,2 @@
-export * from './games.mock';
-export * from './styleMock';
+export * from "./games.mock";
+export * from "./styleMock";

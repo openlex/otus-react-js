@@ -1,21 +1,19 @@
-import React from 'react';
+import React from "react";
 
 interface IGenreListProps {
-	genres: string[];
+  genres: string[];
 }
 
-export const GenreList: React.FC<IGenreListProps> = (props: IGenreListProps) => {
-	const genres = props.genres;
+export const GenreList: React.FC<IGenreListProps> = (
+  props: IGenreListProps
+) => {
+  const genres = props.genres;
 
-	return (
-		<>
-			{
-				genres.map((genre: string, index: number) =>
-					index == genres.length - 1
-						? genre
-						: `${genre}, `
-				)
-			}
-		</>
-	)
-}
+  return (
+    <>
+      {genres.map((genre: string, index: number) =>
+        index == genres.length - 1 ? genre : `${genre}, `
+      )}
+    </>
+  );
+};

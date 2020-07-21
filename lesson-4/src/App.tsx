@@ -1,8 +1,6 @@
-import React from 'react';
-import { Games } from '@containers';
+import React from "react";
+import { Games } from "@containers";
 
-export const App: React.FC < {} > = () => {
-	return (
-		<Games/>
-	)
-}
+export const App: React.FC<{}> = () => {
+  return <Games />;
+};
