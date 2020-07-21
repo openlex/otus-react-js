@@ -1,5 +1,3 @@
-// https://jestjs.io/docs/en/configuration.html
-
 module.exports = {
 	clearMocks: true,
 	coverageDirectory: "coverage",
@@ -9,14 +7,12 @@ module.exports = {
 		"^.+\\.(js|jsx|ts|tsx)$": "<rootDir>/node_modules/babel-jest",
 	},
 	moduleNameMapper: {
-		// https://jestjs.io/docs/en/webpack#handling-static-assets
 		"\\.(css|less|scss)$": "<rootDir>/__mocks__/styleMock.js",
 		"^@/(.*)$": "<rootDir>/src/$1",
 		"^@mocks(.*)$": "<rootDir>/__mocks__$1",
 		"^@containers(.*)$": "<rootDir>/src/containers$1",
 		"^@components(.*)$": "<rootDir>/src/components$1",
 		"^@types(.*)$": "<rootDir>/src/types$1",
-		// "^@(.*)$": "<rootDir>/src$1",
 		"^.+\\.(css|scss)$": "identity-obj-proxy",
 	},
 	transformIgnorePatterns: [
