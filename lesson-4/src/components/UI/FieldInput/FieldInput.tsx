@@ -3,12 +3,12 @@ import cn from 'classnames';
 import * as s from './FieldInput.scss';
 
 export interface IFieldInputProps {
-	name: string;
 	className?: string;
+	name: string;
 	label?: string;
-	value?: string;
+	value?: string
+	type?: string
 	onChange?(result: IFieldInputData): void;
-	type?: string;
 	isTextArea?: boolean;
 }
 
@@ -37,20 +37,20 @@ export const FieldInput: React.FC<IFieldInputProps> = (
 
 	return (
 		<label className={cn(s.block, className)}>
-			{ label && <span data-test-id="fieldInputLabel">{label}</span> }
+			{ label && <span className={s.label} data-test-id="fieldInputLabel">{label}</span> }
 			<div className={s.fieldWrapper}>
 				{ isTextArea
 					? <textarea
+						className={cn(s.textarea, s.input)}
 						name={name}
 						data-test-id="fieldInput"
-						className={cn(s.textarea, s.input)}
 						onChange={onChangeInput}
 						value={value}
 					/>
 					: <input
+						className={s.input}
 						name={name}
 						data-test-id="fieldInput"
-						className={s.input}
 						type={type}
 						value={value}
 						onChange={onChangeInput}
