@@ -48,8 +48,8 @@ export class Games extends React.Component<IGamesProps, IGamesState>{
 		return (
 			<div>
 				<h1>Список игр</h1>
-				 <GamesList games={this.state.games}/>
-				 <GameForm onAddGame={this.addGame}/>
+				<GamesList games={this.state.games}/>
+				<GameForm onAddGame={this.addGame}/>
 			</div>
 		);
 	}

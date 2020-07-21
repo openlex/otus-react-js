@@ -6,6 +6,7 @@
   "scripts": {
     "build": "npx webpack --config webpack.config.js --mode production",
     "start": "webpack-dev-server --mode development --open --hot",
+    "test-update": "npx jest --updateSnapshot",
     "test": "npx jest",
     "lint": "npx eslint --ext .js,.jsx,.ts,.tsx --fix ./",
     "storybook": "start-storybook -p 6006",
@@ -17,7 +18,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint"
+      "pre-commit": "npm run lint && npm run test"
     }
   },
   "author": "a.kozeruk",

@@ -49,7 +49,6 @@ describe("Gameform actions", () => {
 	})
 
 	it('onChange FieldInput change the state', () => {
-		console.log('gameForm.state()', gameForm.state());
 		Object.keys(gameForm.state()).forEach((fieldInput: string) => {
 			const value = `new value ${fieldInput}`;
 			const input = gameForm.find(`[data-test-id="input-${fieldInput}"]`);
