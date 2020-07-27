@@ -1,0 +1,25 @@
+.block {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+.info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.title {
+	font-weight: bold;
+}
+
+.description {
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+
+.genres {
+	font-size: 14px;
+	color: gray;
+}
+
