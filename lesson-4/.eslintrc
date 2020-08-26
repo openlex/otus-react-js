@@ -20,7 +20,8 @@
     "prettier/prettier": [
       "error",
       {
-        "endOfLine": "auto"
+        "endOfLine": "auto",
+        "tabWidth": 2
       }
     ],
     "no-restricted-syntax": [

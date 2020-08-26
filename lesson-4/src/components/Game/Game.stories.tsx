@@ -1,14 +1,24 @@
 import * as React from "react";
-import { withKnobs } from "@storybook/addon-knobs";
-import { GameForm } from "@components";
-import { action } from "@storybook/addon-actions";
+import { gamesMock as games } from "@mocks";
+import { withKnobs, number, text, array } from "@storybook/addon-knobs";
+import { Game } from "@components";
 
 export default {
   title: "Список игр",
-  component: GameForm,
+  component: Game,
   decorators: [withKnobs],
 };
 
-export const DefaultGameForm = () => (
-  <GameForm onAddGame={action("click add game")} />
-);
+export const DefaultGame = () => {
+  const { id, title, genres, description, rating } = games[0];
+
+  return (
+    <Game
+      id={id}
+      title={text("Заголовок", title)}
+      genres={array("Список жанров (через запятую)", genres, ",")}
+      description={text("Описание", description)}
+      rating={number("Рэйтинг", rating, { min: 0, max: 5, step: 1 })}
+    />
+  );
+};

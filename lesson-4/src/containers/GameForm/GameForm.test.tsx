@@ -1,18 +1,24 @@
 import React from "react";
-import { shallow } from "enzyme";
-import { GameForm } from "@components";
+import { mount, ReactWrapper } from "enzyme";
+import { GameForm } from "@containers";
 
 describe("Gameform actions", () => {
+  let gameForm: ReactWrapper = {} as ReactWrapper;
   const onAddGameMock = jest.fn();
-  const gameForm = shallow(<GameForm onAddGame={onAddGameMock} />);
-  gameForm.setState({
-    title: "Title",
-    genres: "a,b, c",
-    rating: "5",
-    description: "Desc",
+  let addButton: ReactWrapper = {} as ReactWrapper;
+  let resetButton: ReactWrapper = {} as ReactWrapper;
+
+  beforeEach(() => {
+    gameForm = mount(<GameForm onAddGame={onAddGameMock} />);
+    gameForm.setState({
+      title: "Title",
+      genres: "a,b, c",
+      rating: "5",
+      description: "Desc",
+    });
+    addButton = gameForm.find('[data-test-id="addButton"]');
+    resetButton = gameForm.find('[data-test-id="resetButton"]');
   });
-  const addButton = gameForm.find('[data-test-id="addButton"]');
-  const resetButton = gameForm.find('[data-test-id="resetButton"]');
 
   it("fields are filled with states", () => {
     expect(gameForm.find('[data-test-id="input-title"]').props().value).toEqual(
@@ -84,14 +90,5 @@ describe("Gameform actions", () => {
       ).toEqual(value);
       expect(gameForm.state(fieldInput)).toEqual(value);
     });
-  });
-});
-
-describe("Gameform markup", () => {
-  it("match snapshoot", () => {
-    const onAddGameMock = jest.fn();
-    const gameForm = shallow(<GameForm onAddGame={onAddGameMock} />);
-
-    expect(gameForm).toMatchSnapshot();
   });
 });
