@@ -14,14 +14,22 @@ export type ExpectedTeam = {
 export const originalTeamToExpectedTeam = (
   originalTeam: OriginalTeam
 ): ExpectedTeam => {
-  //
+  const {size, ...props} = originalTeam;
+
+  return {
+    ...props,
+    name: "New York Badgers",
+    roster: 25,
+  }
 };
 
 // Задание 2
 type SomeArray = Array<number | string>;
 
-const originalArrayToExpectedArray = (originalArray: SomeArray): SomeArray => {
-  //
+export const originalArrayToExpectedArray = (originalArray: SomeArray): SomeArray => {
+  const [number1, number2, ...rest] = [1, 2, 3];
+
+  return ["two", ...rest, 4, 5];
 };
 
 // Задание 3
@@ -34,6 +42,14 @@ export type Team = {
   };
 };
 
-export const originalTeamToExpectedTeam = (originalTeam: Team): Team => {
-  //
+export const originalTeamToExpectedTeam2 = (originalTeam: Team): Team => {
+  const { captain, ...rest } = originalTeam;
+
+  return {
+    ...rest,
+    captain: {
+      ...captain,
+      age: 28,
+    },
+  }
 }
